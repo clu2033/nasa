@@ -128,8 +128,8 @@ def main():
           '\t<-- this number should hopefully be 0.')
 
     print('\nEnter 1 to plot {} by year.\n'.format(*user_param),
-          'Enter 2 to plot by month.\n',
-          'Enter 3 to plot by day. \n', sep='')
+          'Enter 2 to plot {} by month.\n'.format(*user_param),
+          'Enter 3 to plot {} by day. \n'.format(*user_param), sep='')
 
     user_window = input()
     while user_window not in ['1', '2', '3', '4']:
