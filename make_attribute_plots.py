@@ -125,7 +125,7 @@ def main():
 
     print('\nNumber of missing {} measurements:'
           .format(*user_param), param_df.isnull().sum()[0],
-          '\t<-- this number should hopefully be 0...')
+          '\t<-- this number should hopefully be 0.')
 
     print('\nEnter 1 to plot {} by year.\n'.format(*user_param),
           'Enter 2 to plot by month.\n',
@@ -152,6 +152,8 @@ def main():
 
     mod_df = param_df.resample('{}'.format(window),
                             on='DateCollected').mean().dropna(how='all')
+
+    print(mod_df.describe())
 
     print('\nEnter 1 if you want to view plots.',
           'Enter 2 if you just want to save them.')
