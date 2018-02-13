@@ -113,6 +113,11 @@ def main():
 
     print('\nEnter parameter to plot. (Use full name)')
     user_param = [input()]
+    # print(sta_df.ParamName.unique())
+    while user_param not in sta_df.ParamName.unique():
+        print('\nAttribute not found.',
+              'Enter parameter to plot. Use the full attribute name.')
+        user_param = [input()]
 
     param_df = sta_df[sta_df.ParamName.isin(user_param)]
     param_df = param_df[['DateCollected', 'Value', 'Units']]
